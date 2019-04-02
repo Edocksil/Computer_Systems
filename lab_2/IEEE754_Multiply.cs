@@ -19,26 +19,26 @@ namespace t3
             {
                 try
                 {
-                    Console.Write("Ваше перше число (з плаваючою точкою): ");
+                    Console.Write("Ваше перше число (з плаваючою точкою) (!=0): ");
                     first = Console.ReadLine();
                 }
                 catch (FormatException exc)
                 {
                     Console.WriteLine("Неправильний формат числа: " + exc);
                 }
-            } while (!float.TryParse(first, out firstNumber));
+            } while (!float.TryParse(first, out firstNumber) || Int32.Parse(first)==0);
             do
             {
                 try
                 {
-                    Console.Write("Ваше друге число (з плаваючою точкою): ");
+                    Console.Write("Ваше друге число (з плаваючою точкою) (!=0): ");
                     second = Console.ReadLine();
                 }
                 catch (FormatException exc)
                 {
                     Console.WriteLine("Неправильний формат числа: " + exc);
                 }
-            } while (!float.TryParse(second, out secondNumber));
+            } while (!float.TryParse(second, out secondNumber) || Int32.Parse(second)==0);
 
             float result = floating_multiplier.FloatingNumbersMultiplication(firstNumber, secondNumber);
 
