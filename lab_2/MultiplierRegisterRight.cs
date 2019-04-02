@@ -52,7 +52,7 @@ namespace t11
             int[] multiplicand = BinaryConverter(first);
             int[] multiplier = BinaryConverter(second);
             int[] product = new int[64];
-            for (int i = 0; i < 32; ++i)
+            for (int i = 0; i < 32; i++)
             {
                 Console.WriteLine();
                 Console.WriteLine("Крок (ітерація): " + (i + 1));
@@ -189,5 +189,4 @@ namespace t11
             return number;
         }
     }
-
 }
