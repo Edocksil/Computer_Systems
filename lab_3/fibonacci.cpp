@@ -9,7 +9,6 @@ int fib(int n)
 
 int main ()
 {                                                                                                                                                                       
-  int n = 42;
-  printf("%d\n", fib(n));
+  fib(42);
   return 0;
 } 
