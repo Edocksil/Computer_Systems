@@ -10,7 +10,7 @@
 						time `icc -O$o -x$flag fibo.cpp`
 						echo "*******************************"
 						echo "file executed for 5 times in"
-						time `for i in {1..5}; do ./a.out; done`
+						time `for i in {1..5}; do ./a.out >/dev/null; done`
 					done
 				fi
 		done;
