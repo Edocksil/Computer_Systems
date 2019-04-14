@@ -12,13 +12,10 @@ ml icc
                         for o in {1..3}; do
                                 echo "---------------------------" 
                                 echo "$flag with -O$o"             
-                                time `icc -O$o -x$flag fibo.cpp -o $flag_o$o.out` 
-								for file in `find ./ -type  f -name '*\.out'`                                                                                                                                        
-do        
-	echo "*******************************"																																		
-	echo "$file for 10 times executed in"                                                                                                                                               
-	time `for i in {1..10}; do ./file; done`
-done                                        
+                                time `icc -O$o -x$flag fibo.cpp -o $flag_o$o`      
+								echo "*******************************"																																		
+								echo "file executed in"                                                                                                                                               
+								time `./$flag_o$o`      
                         done
                 fi
         done
