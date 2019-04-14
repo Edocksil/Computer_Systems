@@ -10,7 +10,7 @@ ml icc
                                 time `icc -O$o -x$flag fibo.cpp`
                                 echo "*******************************"
                                 echo "file executed in"
-                                time `./a.out`
+                                time `./a.out > echo 2> /dev/null`
                         done
                 fi
         done
