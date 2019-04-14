@@ -1,7 +1,7 @@
 #!/bin/bash                                                                                                                                                           
 flags=`grep ^flags /proc/cpuinfo | uniq | cut -d':' -f2 | cut -d" " -f2- | tr _ . | tr "a-z" "A-Z"`
-
-ml icc
+                                                                                                                                                                        
+ml icc                                                                                                                                                                  
                                                                                                                                                                         
         for flag in $flags; do
                                                                                                                                                                         
@@ -12,10 +12,10 @@ ml icc
                         for o in {1..3}; do
                                 echo "---------------------------" 
                                 echo "$flag with -O$o"             
-                                time `icc -O$o -x$flag fibo.cpp -o $flag_o$o`      
-								echo "*******************************"																																		
-								echo "file executed in"                                                                                                                                               
-								time `./$flag_o$o`
+                                time `icc -O$o -x$flag fibo.cpp -o temp`
+                                echo "*******************************"
+                                echo "file executed in"
+                                time `./temp`
                         done
                 fi
         done
